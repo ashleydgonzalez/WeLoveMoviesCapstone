@@ -18,14 +18,6 @@ router
 router.use("/:movieId/reviews", reviewsRouter);
 router.use("/:movieId/theaters", theatersRouter);
 
-// router
-//   .route('/:movieId/theaters')
-//   .get(controller.listMovieTheaters)
-//   .all(methodNotAllowed)
 
-// router
-//   .route('/:movieId/reviews')
-//   .get(controller.listMovieReviews)
-//   .all(methodNotAllowed)
 
-module.exports = router
+module.exports = router;

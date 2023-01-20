@@ -4,8 +4,7 @@ const methodNotAllowed = require('../errors/methodNotAllowed');
 
 async function reviewIsValid(req, res, next) {
   const review = await service.read(req.params.reviewId);
-  // const { reviewId } = req.params;
-  // const matchingReview = await service.read(reviewId)
+  
   if (review) {
     res.locals.review = review;
     return next();

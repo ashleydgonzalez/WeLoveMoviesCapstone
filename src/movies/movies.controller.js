@@ -16,33 +16,18 @@ async function read (req, res, next) {
 }
 
 async function list (req, res) {
-  // const isShowing = req.query.is_showing
-  // if (isShowing) {
-  //   res.json ({ data: await service.listMovie() })
-  // } else {
-  //   res.json ({ data: await service.list() })
-  // }
+  
   const data = await service.list(req.query.is_showing)
   res.json({ data })
 }
 
 
-// async function listMovieTheaters (req, res, next) {
-//   const movieId = req.params.movieId
-//   res.json ({ data: await service.listMovieTheaters(movieId) })
-// }
 
-// async function listMovieReviews (req, res, next) {
-//   const movieId = req.params.movieId
-//   const result = await service.listMovieReviews(movieId)
-//   res.json ({ data: result })
-// }
 
 
 
 module.exports = {
   list: [asyncErrorBoundary(list)],
   read: [asyncErrorBoundary(movieIsValid), asyncErrorBoundary(read)],
-  // listMovieTheaters: [asyncErrorBoundary(movieIsValid), asyncErrorBoundary(listMovieTheaters)],
-  // listMovieReviews: [asyncErrorBoundary(movieIsValid), asyncErrorBoundary(listMovieReviews)]
+  
 }

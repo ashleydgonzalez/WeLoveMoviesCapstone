@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": ".."
+		},
+		{
+			"path": "../../starter-movie-front-end"
 		}
 	],
 	"settings": {}

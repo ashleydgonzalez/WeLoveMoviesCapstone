@@ -8,7 +8,7 @@ const reduceMovies = reduceProperties('theater_id', {
   rating: ['movies', null, 'rating'],
   description: ['movies', null, 'description'],
   image_url: ['movies', null, 'image_url'],
-  // is_showing: ['movies', null, 'is_showing']
+  
 });
 
 function list() {
@@ -19,6 +19,7 @@ function list() {
     "theaters.theater_id"
   )
   .join("movies", "movies.movie_id", "movies_theaters.movie_id")
+  .select("*")
   .then(reduceMovies);
 };
 
